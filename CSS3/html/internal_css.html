@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title> Webpage with Style </title>
+
+    <!-- Internal CSS defines styles under this tag "style" -->
+    <!-- Traditionally placed under "head" -->
+    <!-- Dont forget ";" after each attriute -->
+
+    <style type="text/css">
+
+      p{
+        color: red;
+        font-size:200%;
+      }
+
+      h1{
+        color:green;
+      }
+
+      /* ".<class name> is class selector" */
+      .orange{
+        color:orange;
+      }
+
+      .large{
+        font-size: 200%;
+      }
+
+      /* "#<id name> is id selector" */
+      #blue{
+        color:blue;
+      }
+
+    </style>
+  </head>
+  <body>
+
+
+    <p>
+      Styling a paragraph using Internal CSS. This is done under a separate header
+    </p>
+
+    <p>
+      I also have default style
+    </p>
+
+    <!-- Use "class" attribute for applying styles to a collection -->
+    <p class="orange">
+      I'm a paragraph and I fall under class "orange". I dont want this to have default style!
+    </p>
+
+    <!-- "class" need not be limited to tag type -->
+    <h2 class="orange">
+      I'm a h2 and I also fall under class orange! Classes are not limited to tag types
+    </h2>
+
+    <!--Multiple classes can be assigned-->
+    <p class="orange large">
+      Multiple classes can be assigned. I'm both "orange" and "large"
+    </p>
+
+    <!-- Styles can also be applied with "id" attribute. -->
+    <p id="blue">
+      Styles can also be applied with "id" attribute
+    </p>
+
+    <p>
+      This uses default paragraph style. <span class="orange">But I want this line to be of class orange </span>
+    </p>
+
+    <!--  Inline style overrides Internal style -->
+    <p style="color:pink">
+      Inline style overrides Internal style
+    </p>
+
+    <h1>CSS is Cool</h1>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title> Webpage with Style </title>
+
+    <!-- "floats" are used for aligning -->
+
+    <style type="text/css">
+
+    /* Aligning two sections to one sidefloat, places them one after the other */
+     #first-section{
+       color: green;
+       background-color:yellow;
+       width:200px;
+       float: left;
+     }
+
+     #second-section{
+       background-color:orange;
+       width:200px;
+       float: left;
+     }
+
+     #third-section{
+       background-color:lightblue;
+       width:200px;
+       float: right;
+     }
+
+     /* clear both left and right floats */
+     .clear-float{
+       clear:both;
+     }
+
+    </style>
+  </head>
+  <body>
+
+
+    <div id="first-section">
+      <p>I'm section 1</p>
+    </div>
+
+    <div id="second-section">
+      <p>
+        I'm section 2
+      </p>
+    </div>
+
+    <div id="third-section">
+      <p>
+        I'm section 3
+      </p>
+    </div>
+
+    <!-- unfloated elements will align between floated elements when you resize the page. -->
+    <p>
+      This paragraph is not floated. This will align between other elements when you resize the page.
+    </p>
+
+    <!-- everything beneth this class wont be affected by float elements -->
+    <div class="clear-float">
+    </div>
+
+    <p>
+      This is unfloated element after <b>clearing floats</b>
+    </p>
+
+
+  </body>
+</html>
