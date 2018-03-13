@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title> Webpage with Style </title>
+
+    <!-- Paddings are similar to margin but creates space inside the element -->
+
+    <style type="text/css">
+
+     #first-section{
+       color: green;
+       background-color:yellow;
+       width:200px;
+     }
+
+     #second-section{
+       background-color:orange;
+       width:200px;
+       /*Paddind is done on top of width. Ie, total width is 200 + 5*2 = 210 px*/
+       padding: 2px;
+     }
+
+     #third-section{
+       background-color:grey;
+       width:200px;
+       padding: 2px 5px 7px 3px;
+     }
+
+     #fourth-section{
+       background-color:green;
+       width:200px;
+     }
+
+     /*body and p tags already has some default margins and paddings. We can set them to 0 to condense everything*/
+
+     /* Use CSS reset to ensure same default margins in all browsers */
+     body{
+       margin:0;
+       padding:0;
+     }
+
+     p{
+       margin:0;
+       padding:0;
+     }
+
+    </style>
+  </head>
+  <body>
+
+
+    <div id="first-section">
+      <p>I'm section 1. No padding</p>
+    </div>
+
+    <div id="second-section">
+      <p>
+        I'm section 2. Padding all sides same.
+      </p>
+    </div>
+
+    <div id="third-section">
+      <p>
+        I'm section 3. Padding all sides different.
+      </p>
+    </div>
+
+    <div id="fourth-section">
+      <p>
+        I'm section 4
+      </p>
+    </div>
+
+
+
+  </body>
+</html>

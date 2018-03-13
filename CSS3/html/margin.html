@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title> Webpage with Style </title>
+
+    <!-- Margins are used to create spacing around the elements -->
+
+    <style type="text/css">
+
+     #first-section{
+       color: green;
+       background-color:yellow;
+       width:200px;
+       /*Creates a margin around the element by spacing left and top*/
+       margin: 100px;
+       float:left;
+
+     }
+
+     #second-section{
+       background-color:orange;
+       width:200px;
+       /* Does not move into the margin of other elements */
+       float:left;
+       /*top and side margins */
+       margin:10px 50px;
+     }
+
+     #third-section{
+       background-color:grey;
+       width:200px;
+       /*top and clockwise - top, right,down,left*/
+       margin:10px 50px 10px 5px;
+     }
+
+     #fourth-section{
+       background-color:green;
+       width:200px;
+       /*left margin alone*/
+       margin-left: 300px;
+     }
+
+     .clear-float{
+       clear:both;
+     }
+
+    </style>
+  </head>
+  <body>
+
+
+    <div id="first-section">
+      <p>I'm section 1</p>
+    </div>
+
+    <div id="second-section">
+      <p>
+        I'm section 2  with different left and right margin
+      </p>
+    </div>
+
+    <div class="clear-float">
+    </div>
+
+    <div id="third-section">
+      <p>
+        I'm section 3 with all four margins different
+      </p>
+    </div>
+
+    <div id="fourth-section">
+      <p>
+        I'm section 4 with margin for specific side (left margin)
+      </p>
+    </div>
+
+
+
+  </body>
+</html>
