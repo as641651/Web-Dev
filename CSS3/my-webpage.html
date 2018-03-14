@@ -1,28 +1,47 @@
 <html>
   <head>
-    <title> Webpage with Style </title>
+    <title> Technology - BBC News </title>
 
     <style type="text/css">
 
-      /* unvisited link */
-      a:link{
-        color: green;
+    /*top bar should be at the center of the page.
+    we use fixed width and auto margin for that */
+      #topbar{
+        /*width:1000px;*/
+        margin:0 auto;
+        /*background-color: grey;*/
+        height: 40px;
       }
 
-      /*upon visiting */
-      a:visited{
-        color: red;
+      /*we dont want default margins and paddings */
+      body{
+        margin:0;
+        padding:0;
+        font-family: Arial, Helvetica, freesans, sans-serif;
       }
 
-      /*selected link (applies up on clicked)*/
-      a:active{
-        color: yellow;
+      .topbar-section{
+
+        float:left;
+
+        border-left:2px #CCCCCC solid;
+
+        /*100% of element*/
+        height :100%;
       }
 
-      /*upon hovering*/
-      a:hover{
-        text-decoration: overline;
+      #logo{
+        margin:8px;
+        width:100px;
+        float:left;
       }
+
+      #signin-image{
+        width:35px;
+        margin: 3px 7px;
+        float:left;
+      }
+
 
     </style>
 
@@ -30,14 +49,19 @@
   </head>
   <body>
 
-    <p>
-      <a href="http://www.google.com">Google</a>
-    </p>
+    <div id="topbar">
 
-    <!-- To open in new tab -->
-    <p>
-      <a href="http://www.google.se" target="_blank">Google in new tab</a>
-    </p>
+      <img id ="logo" src="bbc_files/bbc-blocks-dark.png" />
+
+      <div id="signin-div" class="topbar-section">
+        <img id="signin-image" src="bbc_files/sign-in.png" />
+
+        <!-- margin does not work under span -->
+        <span style="font-weight:bold; position:relative; top:11px;">Sign in</span>
+
+      </div>
+    </div>
+
 
   </body>
 </html>
