@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <title> Webpage with Style </title>
+
+    <style type="text/css">
+
+     /*bold falls under font weight*/
+      .bold{
+        font-weight: bold;
+        color: red;
+      }
+
+      /* italic falls under font style */
+      .italic{
+        font-style: italic;
+      }
+
+      .underlined{
+        text-decoration: underline;
+      }
+
+      /* changing link styles */
+      .plain_link{
+        text-decoration: none;
+      }
+
+      .plain_link_hover{
+        text-decoration: overline;
+      }
+
+      /* This style is applied up on hovering mouse */
+      .plain_link_hover:hover{
+        text-decoration: none;
+        color: green;
+        font-weight: bold;
+      }
+
+      /* transofrms texts to upper case */
+      .big:hover{
+        font-size: 150%;
+        text-transform: uppercase;
+      }
+
+      /*text indentation and spacing */
+      .indent{
+        text-indent: 50px;
+        letter-spacing: 5px;
+        word-spacing: 10px;
+      }
+
+      /*Alignment */
+      .align_right{
+        text-align: right;
+      }
+
+      /*To show that alignment applies to the parent element*/
+      div{
+        position: relative;
+        left:300px;
+        top:200px;
+        width: 500px;
+        background-color: yellow;
+      }
+
+    </style>
+
+
+  </head>
+  <body>
+
+    <p class="bold">
+      This text is bold
+    </p>
+
+    <p class="italic">
+      This text is italic.
+    </p>
+
+    <p class="bold italic">
+      This text is bold and italic
+    </p>
+
+    <p>
+      I only want <span class="bold" > this </span> bold.
+    </p>
+
+    <p class="underlined">
+      This text is underlined
+    </p>
+
+    <a class="plain_link" href="">This is a non-underlined link</a>
+    <br /> <br />
+    <a class="plain_link_hover" href="">This link styles upon hovering</a>
+
+    <p class="big">
+      This text is transformed to upper case on hovering!
+    </p>
+
+    <p class="indent">
+      This text is indented and spaced. For more styles <a href="https://www.w3schools.com/css/css_text.asp"> click here!</a>
+    </p>
+
+    <p class="align_right">
+      This text is aligned to right!
+    </p>
+
+    <div>
+      <p class="align_right">
+        This text aligned right under a division
+      </p>
+
+      <p style="text-align:center">
+        This text is centered under div.
+      </p>
+
+      <p style="text-align:justify" class="bold">
+        Text below is justified and viewed with Lorum ipsum standard
+      </p>
+      <p style="text-align:justify">
+        Lorem ipsum dolor sit amet, error sententiae theophrastus eu cum. Tollit percipit lucilius ex mea, cum ullum quaestio at. Eum viderer docendi ad, eu alii alienum democritum vix. Vix in mucius option. Paulo putant ne sed, id vis scaevola elaboraret.
+
+Saepe philosophia ei vix, ne quo dicat perfecto disputationi. Eam in vero option. Te his option adipiscing, ut error fuisset eos. Habeo pertinax consequuntur et vis, dolores menandri duo ex. Et vis putant habemus honestatis, vix nostro melius maiestatis eu, ne saperet recteque nam. An quo civibus principes definiebas, an nisl dolore eam, ius verear perpetua ad.
+
+An mollis necessitatibus his. Sit debet graeci albucius cu, malis temporibus duo ne. Sit eu odio lorem percipit, fugit aliquam detraxit vel at. Pro putant malorum at, et eos eros detracto. Philosophia voluptatibus ad qui, pri nemore oporteat ad. Ei pri ceteros aliquando incorrupte, summo referrentur ea est.
+
+Mel id animal accumsan, no discere alterum nam, ei quo molestie prodesset. Causae civibus scribentur te has, ornatus convenire et usu. Eum expetenda scribentur at, tota iudicabit per an, ne omnes soluta viderer qui. Mundi viderer blandit pri cu. Animal signiferumque ut ius.
+
+Ea verear oportere vel, expetenda disputando duo at. Eum mundi offendit at. Sed ea semper laoreet, usu utamur posidonium ei. Ignota accusata senserit sit cu, dolorem graecis vim eu, et mea homero admodum adipisci. Adhuc dicat ei eos, quo ea dico fugit. Ea tractatos euripidis liberavisse vim.
+      </p>
+    </div>
+
+  </body>
+</html>

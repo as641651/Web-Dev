@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title> Webpage with Style </title>
+
+    <style type="text/css">
+
+      P{
+        font-family:Lobster Two;
+      }
+
+      /* Checks the system for fonts from left to right */
+      /*That is, if Lucida is not available it will fall back to Monaco and so on */
+      .web-safe{
+        font-family: "Lucida Console", Monaco, monospace;
+      }
+
+      /*Go to google font and get the font name and link */
+      .google-fonts{
+        font-family: 'Indie Flower', cursive;
+      }
+
+    </style>
+
+    <!-- Importing google font -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <p>
+      This is some text. Open Font viewer to see the list of availabe fonts in ubuntu
+    </p>
+
+    <p class="web-safe">
+      Web safe fonts from <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">CSS Websafe fonts</a>
+    </p>
+
+    <p class="google-fonts">
+      This is google fonts. Get the font from <a href="https://fonts.google.com/"> google fonts</a> and add the link onto your head section
+    </p>
+
+  </body>
+</html>
