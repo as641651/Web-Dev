@@ -7,10 +7,11 @@
     /*top bar should be at the center of the page.
     we use fixed width and auto margin for that */
       #topbar{
-        /*width:1000px;*/
+        width:2000px;
         margin:0 auto;
         /*background-color: grey;*/
         height: 40px;
+
       }
 
       /*we dont want default margins and paddings */
@@ -20,28 +21,124 @@
         font-family: Arial, Helvetica, freesans, sans-serif;
       }
 
+      .clear{
+        clear:both;
+      }
+
       .topbar-section{
 
         float:left;
-
         border-left:2px #CCCCCC solid;
-
         /*100% of element*/
         height :100%;
       }
 
       #logo{
-        margin:8px;
+        margin:8px 8px 0px 8px ;
         width:100px;
         float:left;
       }
 
       #signin-image{
         width:35px;
-        margin: 3px 7px;
+        height:40px;
+        margin: 3px 7px 0px 3px;
         float:left;
       }
 
+      .topbar-menu{
+        font-weight: bold;
+        font-size: 98%;
+        padding:13px 15px 0 15px;
+        height:27px;
+      }
+
+      #search-box{
+        background-color: #E4E4E4;
+        border:none;
+        height:90%;
+        padding:5px;
+        /*border radius can be specified separately for each corner*/
+        border-radius:10px 0 0 10px;
+        margin-left: 0;
+        float:left;
+
+      }
+
+      #magnify{
+        background-color: #E4E4E4;
+        float:left;
+        height:90%;
+        border-radius: 0 10px 10px 0;
+      }
+
+      #menubar-container{
+        background-color: #BB1919;
+        width:100%;
+        height: 70px;
+        border-top: 3px solid #CCCCCC;
+      }
+
+      #menu-bar{
+        width:100%;
+        margin:0 auto;
+      }
+
+      h1{
+        margin:0;
+        padding:10px 5px 0 5px;
+        color:white;
+        font-size: 40px;
+        float:left;
+      }
+
+      #local-news{
+        float: right;
+        /*position: relative;
+        left:1300px;*/
+        margin-top:15px;
+        margin-right:15px;
+        padding: 5px;
+        border: 1px #BB4545 dotted;
+        font-weight: bold;
+      }
+
+      /*Styling links under local news */
+      #local-news a{
+        color: white;
+        font-size: 130%;
+        text-decoration: none;
+      }
+
+      #local-news a:hover{
+          text-decoration: underline;
+          border: 1px white dotted;
+      }
+
+      #menu-bar-2-container{
+        background-color: #A91717;
+        width:100%;
+        height: 40px;
+      }
+
+      #menu-bar-2{
+        width:2000px;
+      }
+
+      #menu-bar-2 a{
+        color:white;
+        text-decoration: none;
+        padding: 0 15px;
+        /*font-weight: bold;*/
+        font-size: 110%;
+        /*always use relative position to move within a section. not margin or padding */
+        position: relative;
+        top:8px;
+      }
+
+        #menu-bar-2 a:hover{
+          text-decoration: underline;
+        }
 
     </style>
 
@@ -58,10 +155,76 @@
 
         <!-- margin does not work under span -->
         <span style="font-weight:bold; position:relative; top:11px;">Sign in</span>
+      </div>
 
+      <div id="bell-div" style="float:left; margin-right:10px;margin-bottom:0;">
+          <img src="bbc_files/cline.png" style="height:40px;" />
+          <img src="bbc_files/bell.png" style="height:95%;width:35px;" />
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        News
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        Sport
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        Weather
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        iPlayer
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        TV
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        More
+      </div>
+
+      <div class="topbar-section topbar-menu">
+        <input type="text" id="search-box" placeholder="search" />
+        <!-- To make the image clickable, we use input of type image -->
+        <input type="image" id="magnify" src="bbc_files/magnify.png" />
       </div>
     </div>
 
+    <div class="clear"> </div>
+
+    <div id="menubar-container">
+      <div id="menu-bar">
+        <h1>NEWS</h1>
+
+        <div id="local-news">
+          <a href="" >Find Local News</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="menu-bar-2-container">
+
+      <div id="menu-bar-2">
+        <a href="">Home</a>
+        <a href="">UK</a>
+        <a href="">World</a>
+        <a href="">Business</a>
+        <a href="">Politics</a>
+        <a href="">Tech</a>
+        <a href="">Science</a>
+        <a href="">Health</a>
+        <a href="">Education</a>
+        <a href="">Entertainment & Arts</a>
+        <a href="">video & Audio</a>
+        <a href="">More</a>
+      </div>
+
+    </div>
 
   </body>
 </html>
