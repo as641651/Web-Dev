@@ -140,6 +140,143 @@
           text-decoration: underline;
         }
 
+        #page-container{
+          width:100%;
+          margin: 0 auto;
+          padding:0;
+          background-color: #F8F8F8;
+          height:100%;
+        }
+
+            #main-article{
+              float:left;
+              margin-left: 10px;
+              border-right: 1px solid #CCCCCC;
+              height:100%;
+            }
+
+                #main-article h2{
+                  margin:0;
+                  position:relative;
+                  top:10px;
+                  padding-bottom: 3px;
+                  border-bottom: 3px solid #BB1919;
+                  font-weight: normal;
+                  width:120px;
+                }
+
+                #main-article h3 a{
+                  color:black;
+                  font-size:30px;
+                  text-decoration: none;
+                  position: relative;
+                  top:20px;
+                }
+
+                #main-article h3 a:hover{
+                  color:#1167a8;
+                }
+
+                #article-container{
+                  width:690px;
+
+                  border-bottom: 1px solid #CCCCCC;
+                  padding-bottom: 20px;
+                }
+
+
+                    #news-container{
+                      float:left;
+                    }
+
+                        #article-summary{
+                          color:#5a5a5a;
+                          width:250px;
+                          position: relative;
+                          top:14px;
+                        }
+
+                        #article-time{
+                          color:#5a5a5a;
+                          width:250px;
+                          position: relative;
+                          top:14px;
+                          left:-10px;
+                        }
+
+                        #article-time a{
+                          color:#a91717;
+                          text-decoration: none;
+                        }
+
+                        #article-time a:hover{
+                          color:#1167a8;
+                        }
+
+                        #article-hr{
+                          color:#a91717;
+                          width:20%;
+                          position: relative;
+                          top:10px;
+                          border-width: 2px;
+                          /*hr should be aligned left in the tag. It is not a style*/
+                        }
+
+                        #article-links a{
+                          font-size: 12px;
+                          color:black;
+                          text-decoration: none;
+                        }
+
+                        #article-links a:hover{
+                          color:#1167a8;
+                        }
+
+                    #article-image{
+                      width:400px;
+                      padding-left: 10px;
+                      padding-top: 10px;
+                    }
+
+          #watch-listen{
+              padding-left: 20px;
+              /* When float left is applied, this section jumps down to next line while resizing */
+              /*use abs positing for containers that you dont want to wrap while resizing*/
+              /*floats applied within this container will now affect only in the container*/
+              position: absolute;
+              top:170px;
+              left:700px;
+
+
+            }
+
+              #watch-listen h2{
+                margin:0; /*without this, there is a gap at the top */
+                position: relative;
+                top:10px;
+                left:10px;
+
+              }
+
+              #watch-container{
+                position: relative;
+                left:10px;
+                top:40px;
+                float:left;
+                width:290px;
+                height:500px;
+
+              }
+
+                  .frame{
+                    float:left;
+                    padding-bottom: 20px;
+                  }
+
+                  .details{
+                    float:right;
+                  }
+
     </style>
 
 
@@ -222,6 +359,90 @@
         <a href="">Entertainment & Arts</a>
         <a href="">video & Audio</a>
         <a href="">More</a>
+      </div>
+
+    </div>
+
+    <div class="clear">
+
+    </div>
+
+    <div id="page-container">
+      <div id="main-article">
+          <h2>Technology</h2>
+
+          <div id="article-container">
+
+            <h3><a href="">Asda bug exposed payment details</a></h3>
+
+            <div id="news-container">
+
+              <p id="article-summary">
+                Security vulnerabilities
+                that put customers at risk have affected Asda's website for a couple of
+                years, a security expert has revealed.
+              </p>
+
+              <p id="article-time">
+                <img src="bbc_files/timer.png" /> 19 January 2016 | <a href="">Technology</a>
+              </p>
+
+              <hr id="article-hr" align="left"/>
+
+              <div id="article-links">
+                <p>
+                  <a href="">Survillance firm hit in hack attack</a>
+                </p>
+                <p>
+                  <a href="">ebay flaws have exited for months.</a>
+                </p>
+              </div>
+            </div>
+
+            <img id="article-image" src="bbc_files/asda.jpeg" />
+
+          </div>
+
+      </div>
+
+      <div class="clear"></div>
+
+      <div id="watch-listen">
+
+        <h2>Watch/Listen</h2>
+
+        <div id="watch-container">
+
+            <div class="frame">
+              <iframe width="200" height="150" src="https://www.youtube.com/embed/yQjHSIHPJfw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="details">
+              <p style="font-size:18px;">
+                <b>Details</b>
+              </p>
+              <p>
+                More info
+              </p>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="frame">
+              <iframe width="200" height="150" src="https://www.youtube.com/embed/yQjHSIHPJfw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="details">
+              <p style="font-size:18px;">
+                <b>Details</b>
+              </p>
+              <p>
+                More info
+              </p>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
       </div>
 
     </div>
