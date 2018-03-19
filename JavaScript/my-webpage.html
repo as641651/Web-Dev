@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+    .circle{
+      float: left;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      border: none;
+      margin: 20px;
+    }
+
+    #first{
+      background: red;
+    }
+
+    #second{
+      background: blue;
+    }
+
+    #third{
+      background: green;
+    }
+
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+    <!-- apply styles to circle -->
+    <button id="first" class="circle"></button>
+    <button id="second" class="circle"></button>
+    <button id="third" class="circle"></button>
+
+    <script type="text/javascript">
+
+      // This Does not Work!!
+      // document.getElementsByClassName("circle").onclick = function(){
+      //   document.getElementsByClassName("circle").style.display = "none";
+      // }
+
+      //Makes the circles dissapear
+      document.getElementById("first").onclick = function(){
+        document.getElementById("first").style.display = "none";
+      }
+
+      document.getElementById("second").onclick = function(){
+        document.getElementById("second").style.display = "none";
+      }
+
+      document.getElementById("third").onclick = function(){
+        document.getElementById("third").style.display = "none";
+      }
+
+
+    </script>
+  </body>
+
+</html>

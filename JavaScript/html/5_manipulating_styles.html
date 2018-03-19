@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+    .applystyle{
+      width:150px;
+      height: 100px;
+      background-color: red;
+      border: 20px solid orange;
+      border-radius: 15px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <p id="text">
+      Change style with CSS!
+    </p>
+
+    <p id="text1">
+      Change style within javascript!
+    </p>
+
+    <p>
+      <h1 id="text2"> <!-- style wont be applied if the id belongs to outer element -->
+        This text will dissapear!
+      </h1>
+    </p>
+
+
+    <button id="styleButton">Change style</button>
+
+    <script type="text/javascript">
+
+      document.getElementById('styleButton').onclick = function(){
+
+        /* Add a class to an element */
+        document.getElementById("text").className = "applystyle";
+
+        /*Change style using .style */
+        document.getElementById("text1").style.fontSize = "40px";
+
+        /*Text dissapears */
+        document.getElementById("text2").style.display = "none";
+
+      }
+
+
+    </script>
+  </body>
+
+</html>

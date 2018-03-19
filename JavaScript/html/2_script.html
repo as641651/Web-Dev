@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+
+    </style>
+
+
+  </head>
+  <body>
+
+    <p id="text">
+      Hello World!
+    </p>
+
+    <!-- The section that executes javascripts. Place it at the end of body -->
+    <script type="text/jscript">
+
+      /*These commands can be executed in the console
+      (Right click page -> inspect element -> console tab)
+      It shows errors in  java scripts*/
+
+      /* Executes on starting web page */
+      alert("Page is loaded");
+
+      /*Looks for indications within the document (body)
+      "innerHTML does not work when the script is placed in the head section"
+      ---> Changes "Hello World" to "HR"*/
+      document.getElementById("text").innerHTML = "HR";
+
+    </script>
+  </body>
+
+</html>

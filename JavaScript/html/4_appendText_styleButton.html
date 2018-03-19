@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+    #styleButton{
+      width:150px;
+      height: 100px;
+      background-color: red;
+      border: 20px solid orange;
+      border-radius: 15px;
+      font-weight: bold;
+      color: white;
+    }
+
+    #styleButton:hover{
+      border-color: lightblue;
+    }
+
+    #styleButton:active{
+      background-color: darkgreen;
+    }
+
+    </style>
+
+  </head>
+  <body>
+
+    <p id="text">
+      Javascript is
+    </p>
+
+
+    <!-- Applying style to button -->
+    <button id="styleButton">Append Text</button>
+
+    <script type="text/javascript">
+
+      document.getElementById('styleButton').onclick = function(){
+
+        /* Appends text on click */
+        document.getElementById("text").innerHTML += "<h2>awesome</h2>";
+
+      }
+
+
+    </script>
+  </body>
+
+</html>
