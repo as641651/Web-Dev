@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+    </style>
+
+  </head>
+  <body>
+
+    <p>How many fingers am I holding up?</p>
+
+    <p>
+      <!-- Replce text with null if it is not an int -->
+      <input type="text"  onkeyup="this.value=this.value.replace(/[^\d]/,'')"
+       id="magic" />
+      <button id="enter">Guess</button>
+    </p>
+
+
+
+    <script type="text/javascript">
+
+      // Variable to limit the number of clicks
+      var num_clicks = 0;
+
+      document.getElementById('enter').onclick = function(){
+
+        num_clicks +=1;
+        var clicks_left = 6-num_clicks;
+
+        // Allow game only if clicks are left
+        if (clicks_left<0){
+          alert("Guesses over!");
+          return;
+        }
+        /* Math.random() : generates a random num between 0 and 1
+          Math.random()*(upper_limit+1) : generates num between 0 and UL */
+        var random_num = Math.floor(Math.random()*6);
+
+        var num_entered = document.getElementById('magic').value;
+
+        if (num_entered == random_num){
+            alert("Correct :" + random_num);
+        }else{
+            alert("WRONG :" + random_num + "\nClicks left :" + clicks_left );
+        }
+      }
+
+    </script>
+  </body>
+
+</html>

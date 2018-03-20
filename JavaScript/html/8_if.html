@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+    </style>
+
+  </head>
+  <body>
+
+    <p>What is the magic word?</p>
+
+    <p><input type="text" id="magic" /></p>
+
+    <p><button id="enter">Enter</button></p>
+
+    <script type="text/javascript">
+
+      document.getElementById('enter').onclick = function(){
+
+        var magic_word = "aravind";
+        var word_entered = document.getElementById('magic').value;
+
+        if (word_entered == magic_word){
+          alert("Correct!");
+        }else{
+          alert("Wrong!");
+        }
+      }
+
+    </script>
+  </body>
+
+</html>

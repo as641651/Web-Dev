@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+      #text-area{
+        width:400px;
+        height:100px;
+        background-color: #CCCCCC;
+        border : 1px black solid;
+        margin-top: 15px;
+        /*Splits a word when border is crossed*/
+        /*overflow-wrap: break-word;*/
+        overflow: scroll;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <input id = "input" type="text" placeholder="type here" />
+
+    <!-- Displays text in the input on the text area -->
+    <button id="b1">Change the text</button>
+
+    <div id="text-area">
+      <p id ="text">
+        This is some text.
+      </p>
+    </div>
+
+
+    <script type="text/javascript">
+
+    // Variables
+    var x = 25;
+    var name = "Aravind";
+    alert("Name : " + name + "\nAge :" + x);
+
+    document.getElementById('b1').onclick = function(){
+
+      var textEntered ="";
+
+      textEntered = document.getElementById('input').value;
+
+      document.getElementById('text').innerHTML = textEntered;
+
+    }
+
+
+    </script>
+  </body>
+
+</html>

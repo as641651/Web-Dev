@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title> Java Script </title>
+
+    <style type="text/css">
+
+
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+
+
+    <script type="text/javascript">
+
+     // Creating array
+      var myArray = new Array();
+
+      myArray[0] = "pizza";
+      myArray[1] = "burger";
+      myArray[2] = "pasta";
+
+      alert(myArray + "\nlength :" + myArray.length);
+
+      // Prints on the console.helps with debugging
+      console.log(myArray);
+
+      //Another way of creating array
+      var tweets = ["morning!", "hello", "coffee!!"];
+      console.log(tweets);
+
+      //Appending items at the end
+      tweets.push("New tweet!");
+      console.log(tweets);
+
+      //Removing items
+      tweets.splice(1,1) //Delete 1 tweet starting at item 1. (Hello is deleted)
+      console.log(tweets);
+
+      tweets.splice(1,2);
+      console.log(tweets); //Deletes coffee and new tweet
+
+      //Adding an element before an items
+      //Add elememnt before 0th item
+      tweets.splice(0,0,"First tweet!") //[first tweet, morning]
+      //Add element before 1st item
+      tweets.splice(1,0,"Second tweet!") // first tweet,second tweet ,morning]
+      console.log(tweets);
+
+      //Replace and insert items
+      tweets.splice(1,1, "replaced second tweet", "mum"); //[first tweet, replaced sec tweet, mum, morning]
+      console.log(tweets);
+      //Can also replace with index
+      tweets[0] = "index replace";
+      console.log(tweets);
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+
+</html>
