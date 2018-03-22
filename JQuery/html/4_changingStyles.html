@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+
+      .shape{
+        height: 100px;
+        width: 100px;
+        margin : 30px;
+
+      }
+
+      #circle{
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+      #circle1{
+        background-color: green;
+        border-radius: 50%;
+      }
+
+      .square{
+        background-color: yellow;
+        float:left;
+      }
+
+      .clear{
+        clear:both;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+      <div id="circle" class="shape">
+
+      </div>
+
+      <p id="text">
+        Changes color on clicked! And alerts a message.
+      </p>
+
+      <div id="circle1" class="shape">
+
+      </div>
+
+      <p id="text">
+        Alerts body width on clicked!
+      </p>
+
+      <div  id="s1" class="shape square">
+
+      </div>
+
+      <div  id="s2" class="shape square">
+
+      </div>
+
+      <div class="clear">
+
+      </div>
+
+      <p id="text">
+        Dissappears on click
+      </p>
+
+
+
+    <script type="text/javascript">
+
+      //Changing styles
+      $("#circle").click(function() {
+
+        //Changing color
+
+        // note that you can use "-". Hence "background-color"
+        //"backgroundColor" works as well
+        $("#circle").css("background-color","red");
+
+        //Getting Color
+        var c = $("#circle").css("background-color");
+        alert("color was changed to " + c);
+      })
+
+      //Displaying body width
+      $("#circle1").click(function() {
+
+        var w = $("body").css("width");
+        alert("body width: " + w);
+
+      });
+
+      //Using "this" keyword!
+      $(".square").click(function(){
+
+        //Disappearing squares currently clicked
+        $(this).css("display","none");
+        //getting attributes
+        alert("you clicked on " + $(this).attr("id"));
+
+      });
+
+
+
+
+    </script>
+
+  </body>
+
+</html>

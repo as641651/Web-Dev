@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+
+      .shape{
+        height: 100px;
+        width: 100px;
+        margin : 30px;
+
+      }
+
+      #circle{
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+      #circle1{
+        background-color: red;
+        border-radius: 50%;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+      <div id="circle" class="shape">
+
+      </div>
+
+      <p id="text">
+        This is some text!
+      </p>
+
+      <div id="circle1" class="shape">
+
+      </div>
+
+      <p id="text1">
+        This text will change when you <b>hover</b> over red circle!
+      </p>
+
+      <!-- Note: you cant embed "https" in iframe. only "http" can be embedded! -->
+       <iframe width="80%" height="50%" src="http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/"></iframe>
+
+
+    <script type="text/javascript">
+
+      // Changing the content of HTML element
+      $("#circle").click(function() {
+        $("#text").html("This text has changed!")
+      })
+
+      //Getting the content of HTML element
+      $("#text").click(function(){
+        alert($("#text").html())
+      })
+
+      //Changing content upon hovering
+      $("#circle1").hover(function(){
+        $("#text1").html("This text has changed after hovering!!")
+      })
+
+      //Changing attributes of HTML element
+      $("#circle1").click(function(){
+        $("iframe").attr("src", "2_clicks.html");
+      })
+
+      $("#circle").click(function(){
+        $("iframe").attr("src", "http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/");
+      })
+
+
+    </script>
+
+  </body>
+
+</html>
