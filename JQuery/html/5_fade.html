@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+
+      .shape{
+        height: 100px;
+        width: 100px;
+        margin : 30px;
+
+      }
+
+      #circle{
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+      #circle1{
+        background-color: green;
+        border-radius: 50%;
+      }
+
+      .square{
+        background-color: yellow;
+      }
+
+      .clear{
+        clear:both;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+      <div id="circle" class="shape">
+
+      </div>
+
+      <p>
+        Fades circle using "fadeOut()" function
+      </p>
+
+      <div id="circle1" class="shape">
+
+      </div>
+
+      <p>
+        Fade out with call back
+      </p>
+
+
+      <p >
+
+        <strong id="text">This text will fade out</strong>
+        <button id="fade"> Fade out Text</button>
+        <br />
+        <strong id="text1" style="display:none;">This text is hidden initially</strong>
+        <button id="fadein"> Fade in Text</button>
+        <br />
+        <strong id="text2">This text visibility will toggle</strong>
+        <button id="toggle"> Toggle Visibility</button>
+
+
+      </p>
+
+      <div  id="s1" class="shape square">
+
+      </div>
+
+      <p>
+        Hides circle usinf "hide()" function.<br />
+        Same effect as setting display = none in style
+      </p>
+
+      <div  id="s2" class="shape square">
+
+      </div>
+
+
+    <script type="text/javascript">
+
+      $("#circle").click(function(){
+
+        // Fades out element on click
+        //$(this).fadeOut();
+        //$(this).fadeOut(3000); //Can specify time in ms
+        $(this).fadeOut("slow"); //can also specify in words
+
+      });
+
+      $("#circle1").click(function(){
+
+        //Fade out with call back
+        $(this).fadeOut(3000, function(){
+
+          alert("Fade Out has finished");
+
+        });
+      })
+
+      //fade out text
+      $("#fade").click(function(){
+
+        $("#text").fadeOut();
+      });
+
+      //fade in text
+      $("#fadein").click(function(){
+
+        $("#text1").fadeIn();
+      });
+
+      //Toggle visibility
+      $("#toggle").click(function(){
+
+        if($("#text2").css("display") != "none")
+            $("#text2").fadeOut();
+        else {
+           $("#text2").fadeIn();
+
+        }
+      });
+
+      $("#s1").click(function(){
+
+        // Fades out element on click
+        $(this).hide();
+
+      });
+
+
+    </script>
+
+  </body>
+
+</html>

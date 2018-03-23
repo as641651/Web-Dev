@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+
+      .shape{
+        height: 100px;
+        width: 100px;
+        margin : 30px;
+        float:left;
+
+      }
+
+      #square1{
+        background-color: green;
+        color:white;
+        overflow: hidden;
+      }
+
+      #square2{
+        background-color: red;
+      }
+
+      #circle{
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="canvas">
+      <div id="square1" class="shape square">
+
+      </div>
+
+      <div id="circle" class="shape">
+
+      </div>
+
+      <div id="square2" class="shape square">
+
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+      // jQuery equivalent of getting "on clicks"
+
+      //Selection by id
+      $("#circle").click(function() {
+        alert("circle was clicked");
+      })
+
+      //Selection by class
+      $(".square").click(function() {
+        alert("square was clicked");
+      })
+
+      //Selection by HTML Element
+      $("div").click(function(){
+        document.getElementById('square1').innerHTML += "A ";
+        document.getElementById('square2').innerHTML += "B ";
+      })
+
+    </script>
+
+  </body>
+
+</html>

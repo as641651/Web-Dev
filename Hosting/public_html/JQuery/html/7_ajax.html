@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title> AJAX </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+
+      .shape{
+        height: 100px;
+        width: 100px;
+        margin : 30px;
+
+      }
+
+      #circle{
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+      <div id="circle" class="shape">
+
+      </div>
+
+      <p id="text">
+
+      </p>
+
+    <script type="text/javascript">
+
+      //get the info from a file
+      //"data" contains the text from info.txt
+      $.get("info.txt", function(data){
+
+        $("#text").html(data);
+
+      }); // Here we cant do anything if the get function fails
+
+      //so we go for ajax
+      $.ajax("info.txt").done( function(data){
+
+          alert("got info from AJAX " + data);
+      });
+
+      $.ajax("info1.txt")
+      .done( function(data){
+
+          alert("got info from AJAX " + data);
+      })
+      .fail(function(){
+
+          alert("could not get 'info1.txt'");
+      });
+
+
+
+
+    </script>
+
+  </body>
+
+</html>

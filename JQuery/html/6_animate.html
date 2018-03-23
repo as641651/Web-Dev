@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+
+      .shape{
+        height: 100px;
+        width: 100px;
+        margin : 30px;
+
+      }
+
+      #circle{
+        background-color: blue;
+        border-radius: 50%;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+
+      <div id="circle" class="shape">
+
+      </div>
+
+      <p>
+        To see the list of CSS properties that can be animated, click <a href="https://www.w3schools.com/jquery/eff_animate.asp">here!</a>
+      </p>
+
+    <script type="text/javascript">
+
+      $("#circle").click(function(){
+
+        $(this).animate(
+          //css properties that can be animated
+          {
+            width:"400px",
+            height:"400px",
+            marginLeft:"100px",
+            marginTop:"100px",
+          },
+          //Time of animation
+          2000,
+          function(){
+            //This function will be called after animation completion
+            $(this).css("background-color","red");
+          }
+        );
+
+      });
+
+
+    </script>
+
+  </body>
+
+</html>
