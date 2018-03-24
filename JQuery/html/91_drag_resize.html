@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <!-- Linking jQuery-UI -->
+    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+
+    <style type="text/css">
+
+      .draggable{
+        height: 100px;
+        width:100px;
+        text-align: center;
+        margin: 10px;
+      }
+
+      #x{
+        background-color: #4286f4;
+      }
+
+      #y{
+        background-color: #9ef442;
+
+      }
+
+      #container{
+        background-color: #8f8fa8;
+
+      }
+
+      #sresize{
+        background-color: yellow;
+      }
+
+      #rresize{
+        background-color: lightblue;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="x" class="draggable">
+        Dragging constrained horizontal!
+    </div>
+
+    <div id="y" class="draggable">
+        Dragging constrained vertical!
+    </div>
+
+    <div id="container" class="draggable">
+      <span id="within"> In box </span>
+    </div>
+
+    <div id="sresize" class="draggable">
+        Synchronized resize!
+    </div>
+
+    <div id="rresize" class="draggable">
+        Restricted resize!
+    </div>
+
+
+
+    <script type="text/javascript">
+
+      //constrained drag
+      $("#x").draggable({axis:"x"});
+      $("#y").draggable({axis:"y"});
+
+      //drag within container and synchronized drag
+      $("#within").draggable({containment:"#container"});
+      $("#container").resizable({
+        grid:100,//resize in steps of 50px
+        alsoResize:"#sresize" //sync resize
+      });
+      $("#sresize").resizable();
+
+      //restrict drag
+      //To do something when dragging happens, look for "events" properties in the API
+      $("#rresize").resizable({
+        resize: function(event,ui){
+          if($("#rresize").width() > 300){
+            $("#rresize").css("width","300px");
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+
+</html>
