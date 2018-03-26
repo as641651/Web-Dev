@@ -10,25 +10,50 @@
 
     <style type="text/css">
 
-      #small{
-        height: 100px;
-        width:100px;
-        text-align: center;
-        margin: 10px;
-        background-color: #4286f4;
+      .editor{
+        height: 400px;
+        width: 300px;
+        border: 3px solid #CCCCCC;
+        resize: none;
+        overflow: scroll;
+        font-size: 20px;
       }
 
-      #big{
-        height: 500px;
-        width:500px;
-        text-align: center;
-        margin: 10px;
-        background-color: #9ef442;
-        position: relative;
-        top:200px;
-        z-index:-1;
+      #t_html{
+        position:absolute;
+        top:5px;
+        left:5px;
+      }
+
+      #t_css{
+        position:absolute;
+        top:5px;
+        left:305px;
+      }
+
+      #t_js{
+        position:absolute;
+        top:5px;
+        left:605px;
+      }
+
+      #out{
+        position: absolute;
+        top:5px;
+        left:905px;
+        border: 3px solid #CCCCCC;
+        border-radius: 5px;
+        height:400px;
+        width: 500px;
+        overflow: scroll;
 
       }
+
+      #click{
+        position:relative;
+        top: 400px;
+      }
+
 
 
     </style>
@@ -36,29 +61,39 @@
   </head>
   <body>
 
-    <div id="small">
-        Draggable!
+    <div id="out">
+
     </div>
 
-    <div id="big">
-        bucket!
-    </div>
+    <textarea id="t_html" class="editor" ></textarea>
+    <textarea id="t_css" class="editor" ></textarea>
+    <textarea id="t_js" class="editor" ></textarea>
 
+    <p>
+      <input type="submit" id="click" value="update" />
+    </p>
 
-    <script type="text/javascript">
+    <script id="main" type="text/javascript">
 
-      $("#small").draggable();
-      $("#big").droppable({
+      // $("#t_html").val("");
+      // $("#t_css").val("");
+      // $("#t_js").val("");
 
-        drop: function(event,ui){
-          //What to happen when drop happens
-          alert("dropped!");
-          console.log(event);
-          console.log(ui);
-
-        }
-
+      $("#t_html").on('input',function(e){
+        //var content = $("#editor").val();
+        $("#out").html(e.target.value);
       });
+
+      var initial_css = $("style").html();
+      $("#t_css").on('input',function(e){
+        $("style").html(initial_css + e.target.value);
+      });
+
+      var initial_js = $("#main").html();
+      $("#t_js").on('input',function(e){
+        $("#main").html(initial_js + e.target.value);
+      });
+
 
     </script>
 
