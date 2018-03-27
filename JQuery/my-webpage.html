@@ -61,9 +61,9 @@
   </head>
   <body>
 
-    <div id="out">
+    <iframe id="out">
 
-    </div>
+    </iframe>
 
     <textarea id="t_html" class="editor" ></textarea>
     <textarea id="t_css" class="editor" ></textarea>
@@ -75,23 +75,29 @@
 
     <script id="main" type="text/javascript">
 
+    function updateOutput() {
+
+        $("iframe").contents()
+        .find("html")
+        .html("<html><head><style type='text/css'>" + $("#t_css").val() + "</style></head><body>" + $("#t_html").val() + "</body></html>");
+
+        document.getElementById("out").contentWindow.eval($("#t_js").val());
+
+        }
       // $("#t_html").val("");
       // $("#t_css").val("");
       // $("#t_js").val("");
 
       $("#t_html").on('input',function(e){
-        //var content = $("#editor").val();
-        $("#out").html(e.target.value);
+        updateOutput();
       });
 
-      var initial_css = $("style").html();
       $("#t_css").on('input',function(e){
-        $("style").html(initial_css + e.target.value);
+          updateOutput();
       });
 
-      var initial_js = $("#main").html();
       $("#t_js").on('input',function(e){
-        $("#main").html(initial_js + e.target.value);
+        updateOutput();
       });
 
 

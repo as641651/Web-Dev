@@ -1,0 +1,198 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title> JQuery </title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <!-- Linking jQuery-UI -->
+    <link href="html/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+    <script src="html/jquery-ui-1.12.1/jquery-ui.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <style type="text/css">
+
+      body{
+        padding:0; /*remove gaps */
+        margin:0;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      #topbar{
+        width:100%;
+        background-color: #EEEEEE;
+        padding:5px;
+        height: 30px;
+      }
+
+      #logo{
+        float:left;
+        font-weight: bold;
+        font-size: 120%;
+        padding: 3px 5px;
+      }
+
+      #button-container{
+        width:300px;
+        margin:0 auto; /* To center */
+      }
+
+      .toggleButton{
+        float:left;
+        border: 1px solid grey;
+        padding:6px;
+        border-right: none;
+        font-size: 90%;
+        overflow:auto;
+      }
+
+      #html{
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      #output{
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-right: 1px solid grey;
+      }
+
+      .active{
+        background-color: #E8F2FF;
+        border : 2px lightblue solid;
+      }
+
+      .highlighted{
+        background-color: lightgreen;
+        border : 2px lightblue solid;
+        cursor: pointer; //changes cursor to finger
+      }
+
+      textarea{
+        resize:none;
+        font-size: 18px;
+      }
+
+      iframe{
+        border: 2px green solid !important;
+        border-top:none !important;
+      }
+
+      .editor{
+        float:left;
+        border: 1px solid grey;
+        border-top: none;
+      }
+
+      .hidden{
+        display:none;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div id="topbar">
+
+      <div id="logo">
+        CodePlayer
+      </div>
+
+      <div id="button-container">
+          <div id="html" class="toggleButton active">
+            HTML
+          </div>
+          <div id="css" class="toggleButton">
+            CSS
+          </div>
+          <div id="js" class="toggleButton">
+            JavaScript
+          </div>
+          <div id="output" class="toggleButton active">
+            Output
+          </div>
+      </div>
+    </div>
+
+    <div id="body-container">
+      <textarea id="t_html" class="editor" >Hello World</textarea>
+      <textarea id="t_css" class="editor hidden" >CSS</textarea>
+      <textarea id="t_js" class="editor hidden" >JS</textarea>
+
+      <iframe id="t_output" class="editor">
+
+      </iframe>
+    </div>
+
+    <script id="main" type="text/javascript">
+
+      //TOP BAR BUTTONs HOVER
+      //hover(handlerIN,handlerOUT)
+      $(".toggleButton").hover( function(){
+          //HandlerIN : happens on hover
+          $(this).addClass("highlighted");
+      }, function(){
+        //HandlerOUT: happens on release
+        $(this).removeClass("highlighted");
+      });
+
+      //TOP BAR BUTTONs CLICK
+      $(".toggleButton").click( function(){
+        $(this).toggleClass("active");
+        $(this).removeClass("highlighted");
+
+        var id = "t_" + $(this).attr("id");
+        $("#" + id).toggleClass("hidden");
+
+        setEditorHeight($(".hidden").length);
+
+      });
+
+      //RESET EDITOR WIDTH ON RESIZE
+
+      function setEditorHeight(n){
+        $(".editor").height($(window).height() - $("#topbar").height() - 60);
+        $(".editor").width(($(window).width()/(4-n)) - 10);
+      }
+
+      setEditorHeight($(".hidden").length);
+
+      $(window).resize(function(){
+        setEditorHeight($(".hidden").length);
+      });
+
+
+      // UPDATE OUTPUT
+      function updateOutput(){
+        $("iframe").contents()
+             .find("html")
+             .html("<html><head><style type='text/css'>"
+                  + $("#t_css").val()
+                  + "</style></head><body>"
+                  + $("#t_html").val()
+                  + "</body></html>");
+
+        //eval JAVASCRIPT ON iFRAME
+        document.getElementById("t_output").contentWindow.eval($("#t_js").val());
+        // executes in main page : eval($("#t_js").val());
+
+      }
+
+      // Reset html on refresh
+      updateOutput();
+
+      //change html on edit
+      $("textarea").on('change keyup paste',function(e){
+        updateOutput();
+      });
+
+
+    </script>
+
+  </body>
+
+</html>
