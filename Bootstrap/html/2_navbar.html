@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Bootstrap</title>
+    <style type="text/css">
+
+    /** Add additional attributes to predefines classes */
+    .btn{
+      margin: 5px;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- "nav" is a new HTML5 element. Actually, if you change "nav" with "div", nothing happens. It is just a semantic thing
+    for better readability -->
+
+    <!-- "bg-light" is the background color
+        To change it to blue, we use "bg-primary" or "bg-info"
+        for green, we use "bg-success"
+        these are keywords often used in bootstarp.Look at the button section for all keywords -->
+
+    <!-- "navbar-light" is one of the coloring schemes for texts in nav bar. -->
+
+    <!-- "navbar-expand-{sm|md|lg|xl}" are the collapsing schemes -->
+
+    <!-- "fixed-top" is used to fix the navbar at top upon scrolling -->
+
+
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+      <!-- "navbar-brand" -->
+      <a class="navbar-brand" href="#">Navbar</a> <!-- Anchors to left-->
+      <img class="navbar-brand" src="me.jpg" width="50" height="60" style="border-radius:50%;" alt=""/> <!-- anchors to right -->
+    </nav>
+
+
+    <!-- Navbars can utilize .navbar-toggler, .navbar-collapse, and
+     .navbar-expand{-sm|-md|-lg|-xl} classes to change when their content collapses behind a button -->
+
+    <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light" style="margin-top:70px;">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <!-- "aria" tags are used to make web contents accessible for people with disabilities-->
+      <!-- a navbar button that toggles the elements of class "collapse" with id "navbarSupportedContent"-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- items in .collapse are collapsed by default. "navbar-collapse" is used to link that collapse with navbar -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- "mr-auto" is margin-right set to auto -->
+        <ul class="navbar-nav mr-auto">
+          <!-- "active" is set to appear darker -->
+          <li class="nav-item active">
+            <!-- "sr-only" is for screen-readers. That is, it reads that section aloud. useful for blind people-->
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+
+    <div class="container" style="margin-top:160px;">
+      <h1>Pre-defined buttons</h1>
+
+
+      <div class="row">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+
+      </div>
+    </div>
+
+    <div class="container">
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu lorem risus. Morbi facilisis elit ac facilisis maximus. In hac habitasse platea dictumst. Morbi gravida, libero ac iaculis dictum, ligula libero porttitor nunc, ac semper sem lectus eget nisi. Donec sagittis in enim sed vestibulum. Aliquam scelerisque diam ultricies leo congue, eget sodales mi sagittis. Vivamus posuere imperdiet quam, sit amet mattis nisl tincidunt quis.
+
+Sed semper imperdiet est, nec imperdiet enim volutpat dapibus. Curabitur nec risus euismod, hendrerit lorem laoreet, gravida mauris. Curabitur gravida velit ut eleifend gravida. In dapibus egestas augue. Aliquam feugiat, magna pretium lacinia posuere, magna lectus gravida lectus, malesuada tincidunt eros est sit amet odio. Nunc sit amet ex vel justo viverra dictum ut sit amet tellus. Vestibulum vitae lorem leo. Duis id lectus aliquet, rutrum augue eget, malesuada dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ornare erat eu nulla lacinia, interdum ornare arcu sagittis. Sed sollicitudin id eros quis semper. Pellentesque diam odio, fringilla quis feugiat sit amet, malesuada et velit.
+
+Sed quis ex enim. Quisque hendrerit nisl tellus, quis volutpat dolor scelerisque at. Vivamus vehicula ac turpis at rutrum. In tristique euismod nunc ac volutpat. Vivamus a volutpat risus, ut placerat metus. Duis cursus ex non luctus congue. Aenean faucibus felis mi. Proin ut eros dui. Phasellus eget nunc nec est sagittis rutrum. Donec interdum, nisi ac venenatis molestie, sem quam accumsan nisi, non placerat enim erat sed metus. Sed aliquet elit diam, eu porttitor nisl iaculis dictum. Nulla auctor, elit vitae facilisis faucibus, urna ipsum gravida ipsum, id mattis nisl mauris non felis. Sed enim justo, dapibus at aliquet ac, tincidunt pretium massa. Mauris non cursus ex.
+
+Morbi nec nibh sed sem porttitor dictum. Suspendisse feugiat consequat diam, nec consequat mi viverra at. Cras ullamcorper tortor a nulla semper, id egestas elit scelerisque. Fusce interdum nec mi pellentesque scelerisque. Integer et varius felis, sit amet auctor lectus. Proin consectetur lobortis odio vel volutpat. Aenean sagittis sem a turpis vehicula suscipit. Nunc dictum elit tincidunt accumsan sagittis. Suspendisse eu hendrerit nulla, id molestie tellus. Sed tempus placerat risus, a dictum est ultrices ac. Sed non enim dictum, tempor tellus ac, hendrerit ante. Praesent vel purus eget elit pulvinar interdum in ut neque.
+
+In molestie sed diam et posuere. Aenean vitae dui libero. Proin at pulvinar velit, vitae interdum nulla. Pellentesque semper euismod mattis. Fusce varius, nulla ut consequat ornare, urna urna laoreet diam, eget feugiat sapien justo at diam. Proin ac magna tincidunt arcu commodo sodales eu sed purus. Praesent varius ipsum eget odio malesuada euismod. Vestibulum venenatis felis ac diam consequat, sed facilisis quam rutrum.
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script id="main" type="text/javascript">
+
+    </script>
+
+  </body>
+</html>
