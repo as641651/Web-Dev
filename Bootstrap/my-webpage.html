@@ -11,101 +11,137 @@
     <title>Bootstrap</title>
     <style type="text/css">
 
+    .jumbotron{
+      background: url("html/tech.jpg") no-repeat center center;;
+      background-size: 100% 100%;
+      height: 900px;
+    }
+
+    #tag{
+      top: 100%;
+      float:right;
+      position: relative;
+    }
+
+    .center-div{
+      margin: 30px auto;
+      width:40%; /* value of your choice which suits your alignment */
+    }
+
+    .card-img-top{
+      height: 300px;
+    }
+
 
     </style>
   </head>
   <body>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Launch demo modal
-    </button>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
 
-    <!-- Modal -->
-    <!-- setting tab index to -1 prevents the user from accessing model with "tab" button.
-    Esp when inside a form, when tab is used to jump to next elements -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+       <a class="navbar-brand" href="#">MyApp</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" >
+              Features
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Download</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-md-2" type="email" placeholder="Email">
+          <input class="form-control mr-md-2" type="password" placeholder="Password">
+          <button class="btn btn-success my-2 my-md-0" type="submit">Login</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="jumbotron" id="jumbo-main">
+
+      <a id="tag" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@otenteko?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Anas Alshanti"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Anas Alshanti</span></a>
+
+      <div class="container text-center">
+        <h1 class="display-3 text-warning mt-5">My Awesome App!</h1>
+        <p class="lead text-light"><strong>This is why you should download this fantastic app!.</strong></p>
+        <hr class="my-4 bg-light">
+        <p class="text-light"><strong>Want to know more? Join our mailing list.</strong></p>
+        <h1 class="mt-5 display-5 text-warning mt-5">Sign up!</h1>
+
+
+        <form class="form center-div">
+
+          <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Name">
+
+          <div class="input-group mb-2 mr-sm-2">
+            <!-- <div class="input-group-prepend"> -->
+            <div class="input-group-text">@</div>
+            <!-- </div> -->
+            <input type="email" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Email">
           </div>
-          <div class="modal-body">
-            <h5>Popover in a modal</h5>
-            <p>This <a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-            <hr>
-            <h5>Tooltips in a modal</h5>
-            <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
+
+          <button type="submit" class="btn btn-success mb-2 mt-4">Sign up</button>
+        </form>
+
       </div>
     </div>
 
-    <!-- Using modal with jQuery -->
+    <div class="container text-center">
+        <h2 class="display-4">Why this app is awesome?</h2>
+        <p class="lead">
+          Summary, once again, of your app
+        </p>
+
+    </div>
 
     <div class="container">
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-
-    </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="html/1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                <input type="text" class="form-control" id="recipient-name">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-            </form>
+          <div class="card">
+            <img class="card-img-top" src="html/2.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" id="send" class="btn btn-primary">Send message</button>
+          <div class="card">
+            <img class="card-img-top" src="html/3.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
         </div>
-      </div>
     </div>
 
-    <!--popovers -->
-    <!-- popover should be initialized in javascript -->
-    <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-      Popover on top
-    </button>
-
-    <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-      Popover on right
-    </button>
-
-    <button type="button" class="btn btn-warning" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-    sagittis lacus vel augue laoreet rutrum faucibus.">
-      Popover on bottom
-    </button>
-
-    <!-- Tool tip : show on hover. should also be initialized before use -->
-    <button type="button" class="btn btn-danger" data-container="body" data-toggle="tooltip" data-placement="left" title="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-      Tool Tip
-    </button>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -115,39 +151,7 @@
 
     <script id="main" type="text/javascript">
 
-    var gr = ""
-    // Update recipient for each model depending on the button clicked
-    $('#exampleModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // Button that triggered the modal
-      var recipient = button.data('whatever') // Extract info from data-* attributes
-      gr = recipient;
-      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-      var modal = $(this)
-      modal.find('.modal-title').html('New message to ' + recipient)
-      modal.find('.modal-body input').val(recipient)
 
-    });
-
-    //This will repeat alerts when placed under 'show.bs.modal' is used!
-    $("#send").click(function(){
-      alert("sent email to " + gr);
-    });
-
-    //alert after cloed
-     $("#exampleModal").on('hidden.bs.modal',function(e){
-        alert("closed");
-     });
-
-     //Init popovers
-     $(function () {
-        $('[data-toggle="popover"]').popover()
-      });
-
-      //Init tool tip
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
 
     </script>
 
