@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Postal code</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <br />
+      <h1>Find your postal code!</h1>
+      <br />
+      <form>
+        <div class="form-group mx-sm-3">
+            <input type="text" class="form-control" placeholder="Enter your address" id="address" />
+            <button class="btn btn-primary mt-3" id="submit" >Find</button> <!-- having type="submit" will refresh the page. -->
+        </div>
+      </form>
+
+      <br />
+      <div id="postalcode">
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        //the code under 'init map' is executed by google api
+        function initMap(){
+          var geocoder = new google.maps.Geocoder();
+          onclick(geocoder);
+        }
+
+        function onclick(geocoder){
+          $("#submit").click(function(e){
+
+            //get the location
+            var address = document.getElementById('address').value;
+
+            //get the response and find the code. look at the documentation for the organiztion of response
+            geocoder.geocode({'address': address}, function(results, status) {
+              if (status === 'OK') {
+                console.log(results);
+
+                var postal_code = "";
+
+                //looping in jquery
+                $.each(results[0]['address_components'], function(key,value){
+                  if(value['types'][0] == 'postal_code'){
+                    postal_code = value['long_name'];
+                    postal_code = '<div class="alert alert-success" role="alert"> <b>ZIP : </b>' + postal_code + '</div>';
+                    $("#postalcode").html(postal_code);
+                  }
+                });
+
+                if(!postal_code){
+                  postal_code = '<div class="alert alert-danger" role="alert">Not postal code for this address</div>';
+                  $("#postalcode").html(postal_code);
+                }
+
+              } else {
+                postal_code = '<div class="alert alert-danger" role="alert">Location not found</div>';
+                $("#postalcode").html(postal_code);
+              }
+            });
+            e.preventDefault(); //prevents the form from being submitted
+          });
+
+        }
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdVVuyHLspLLxPafEM84cOwzaEL1Ahu0I&callback=initMap">
+    </script>
+  </body>
+</html>
