@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="appjs/app.min.css">
+    <style>
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="content">
+
+    </div>
+
+    <script src="appjs/zepto.js"></script>
+    <script type = "text/javascript">
+
+      //check if local storage is accessible
+      if(typeof(Storage) != "undefined"){
+        alert("storage accessible");
+
+        //store some data permanantly. The data can be retrieved without this line if it was already stored
+        //localStorage.setItem("name","aravind");
+
+        //get item. This item can be accessed by any other script as long as data is in cache
+        // Each browser has separate cache
+        var item = localStorage.getItem("name");
+        item = "Found item : " + item;
+        $("#content").html(item);
+
+        //Storing arrays. They have to converted and parsed from JSON
+        var names = [];
+        names[0] = prompt("New member name? ");
+        names[1] = prompt("New another member name? ");
+
+        //convert array to string using JSON.stringify
+        localStorage.setItem("array",JSON.stringify(names));
+
+
+        item = item + "<br />" + JSON.parse(localStorage.getItem("array"));
+        $("#content").html(item);
+
+      }else{
+        alert("update your browser");
+      }
+    </script>
+  </body>
+</html>
